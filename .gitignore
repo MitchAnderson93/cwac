@@ -10,16 +10,8 @@ __pycache__/
 results/*
 .coverage
 *.log
-config/
-!config/config_default.json
 !/drivers/.gitkeep
 .vscode/
-/base_urls/visit/*
-!/base_urls/visit/example.txt
-/base_urls/nohead/*
-!/base_urls/nohead/example.txt
-/base_urls/store/*
-!/base_urls/store/.gitkeep
 /reports/*
 !/reports/.gitkeep
 /test_website/*
