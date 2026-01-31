@@ -11,10 +11,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Install Firefox
+      - name: Install Firefox (non-snap)
         run: |
           sudo apt-get update
-          sudo apt-get install -y firefox
+          sudo apt-get install -y libgtk-3-0 libdbus-glib-1-2
+          FIREFOX_VERSION=122.0.1
+          curl -L -o /tmp/firefox.tar.bz2 "https://download.mozilla.org/?product=firefox-${FIREFOX_VERSION}-linux64&lang=en-US"
+          sudo tar -xjf /tmp/firefox.tar.bz2 -C /opt
+          sudo ln -sf /opt/firefox/firefox /usr/local/bin/firefox
       - name: Install geckodriver
         run: |
           GECKO_VERSION=0.34.0
